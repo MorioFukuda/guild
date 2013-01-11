@@ -2,17 +2,16 @@
 
 function is_prime($num){
 
-$divisor = 2;
-$primeFlag = true;
+	$divisor = 2;
 
-while($divisor < $num){
-	if($num%$divisor==0){
-		$primeFlag = false;
+	while($divisor < $num){
+		if($num%$divisor==0){
+			return false;
+		}
+		$divisor++;
 	}
-	$divisor++;
-}
 
-return $primeFlag;
+	return true;
 
 }
 
