@@ -17,7 +17,8 @@ function patternList($digit){
 	while($num <= $limit){
 
 		if(preg_match($pattern, $num)){
-			$list[] = preg_split('//u', $num, -1, PREG_SPLIT_NO_EMPTY);
+			$list[] = str_split($num);
+
 		}
 		$num++;
 	}
@@ -35,7 +36,7 @@ function patternList($digit){
 function permutation($string){
 
 	$result = array();
-	$dividedString[] = preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY);
+	$dividedString[] = str_split($string);
 	
 	$patternList = patternList(count($dividedString[0]));
 
