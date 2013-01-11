@@ -16,8 +16,9 @@ return $primeFlag;
 
 }
 
-for($i=1; $i<=100; $i++){
-	echo "$i ";
-	echo is_prime($i)?"is prime number.\n":"is not prime number. \n";
+for($i=2; $i<=100; $i++){
+	if(is_prime($i)){
+		echo $i . ' ';
+	}
 }
 ?>
