@@ -1,7 +1,7 @@
 <?php
 
 function isAvailable($userId){
-	return preg_match("/^([0-9|[a-zA-Z]|\-){4,10}$/", $userId);
+	return preg_match("/^([0-9a-zA-Z]|-){4,10}$/", $userId);
 }
 
 echo isAvailable('morio');
