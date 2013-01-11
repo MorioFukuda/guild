@@ -1,10 +1,10 @@
 <?php
 
-$counter = 0;
+$counter =0; 
 $answer = 0;
-$limit = 10;
+$limit = 100;
 
-for($i=1; $counter <= $limit; $i++){
+for($i=2; $counter <= $limit; $i++){
 
 	$primeFlag = true;
 	$num = 2;
