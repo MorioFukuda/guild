@@ -1,11 +1,14 @@
 <?php
 
 $numList = array();
-$arraySize = 100;
+$arraySize = 10000;
 
 for($i=0; $i<$arraySize; $i++){
 	$numList[] = mt_rand(0, 1000);
 }
+
+$start_m = microtime();
+$start = time();
 
 for($i=0; $i<$arraySize; $i++){
 
@@ -19,7 +22,13 @@ for($i=0; $i<$arraySize; $i++){
 	
 }
 
+$end_m = microtime();
+$end = time();
+$bench = ($end - $start) + ($end_m - $start_m);
+var_dump($bench);
+
+/*
 for($i=0; $i<$arraySize; $i++){
 	echo $numList[$i] . ", ";
 }
-
+*/

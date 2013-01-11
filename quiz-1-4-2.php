@@ -1,7 +1,7 @@
 <?php
 
 $numList = array();
-$arraySize = 1000000;
+$arraySize = 10000;
 
 for($i=0; $i<$arraySize; $i++){
 	$numList[] = mt_rand(0, 100000);
@@ -53,10 +53,20 @@ for($i=0; $i<$arraySize; $i++){
 echo "\n";
 */
 
+$start_m = microtime();
+$start = time();
+
 quickSort($numList, 0, $arraySize-1);
 
+$end_m = microtime();
+$end = time();
+$bench = ($end - $start) + ($end_m - $start_m);
+var_dump($bench);
+
+/*
 for($i=0; $i<$arraySize; $i++){
 	echo $numList[$i] . " ";
 }
+*/
 
 ?>
