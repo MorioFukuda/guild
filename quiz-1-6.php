@@ -1,6 +1,6 @@
 <?php
 
-function petternList($digit){
+function patternList($digit){
 	
 	$list = array();
 	
@@ -32,4 +32,24 @@ function petternList($digit){
 	return $list;
 }
 
+function permutation($string){
+
+	$result = array();
+	$dividedString[] = preg_split('//u', $string, -1, PREG_SPLIT_NO_EMPTY);
+	
+	$patternList = patternList(count($dividedString[0]));
+
+	foreach($patternList as $pattern){
+		$string = '';
+		foreach($pattern as $pos){
+			$string .= $dividedString[0][$pos-1];
+		}
+		$result[] = $string;
+	}
+	return $result;
+}
+
+echo implode(" ", permutation("123"));
+echo "\n";
+echo implode(" ", permutation("hoge"));
 ?>
