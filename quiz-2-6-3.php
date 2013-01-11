@@ -38,7 +38,6 @@ function my_str_replace($pattern, $replacement, $subject){
 	if(strlen($result) != 0){
 		return $result;
 	}else{
-		echo 'hoge';
 		return $subject;
 	}
 }
