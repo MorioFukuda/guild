@@ -33,7 +33,7 @@ function checkPass($password){
 	if(!preg_match("/^[!-~]*$/", $password) || preg_match("/<|&{/", $password)){
 		return "使用できない文字が使われています。";
 	}
-	if(!preg_match("/^[!-~]{8,32}$/", $password)){
+	if(8 > strlen($password) || strlen($password) > 32){
 		return "パスワードは8字以上、32字以内で作成してください。";
 	}
 
@@ -66,4 +66,5 @@ var_dump(checkPass("qwerty1234"));
 var_dump(checkPass("qy24+"));
 var_dump(checkPass("qw24+あ+"));
 var_dump(checkPass("qwerty1234++"));
+var_dump(checkPass("qwertyqwertyqwerty1234512345++++++++++"));
 ?>
