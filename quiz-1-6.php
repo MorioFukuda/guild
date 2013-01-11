@@ -4,17 +4,17 @@ function patternList($digit){
 	
 	$list = array();
 	
-	$limit = pow(10, $digit);
 	$start = pow(10, $digit-1);
 	$num = $start;
 	
-	$pattern = '/[';
-	for($i=1; $i<=$digit; $i++){
+	$pattern = '';
+	for($i=$digit; 1<=$i; $i--){
 		$pattern .= $i;
 	}
-	$pattern .= ']{' . $digit .'}/';
+	$limit = (int)$pattern;	
+	$pattern ='/[' . $pattern . ']{' . $digit .'}/';
 
-	while($num < $limit){
+	while($num <= $limit){
 
 		if(preg_match($pattern, $num)){
 			$list[] = preg_split('//u', $num, -1, PREG_SPLIT_NO_EMPTY);
@@ -49,7 +49,5 @@ function permutation($string){
 	return $result;
 }
 
-echo implode(" ", permutation("123"));
-echo "\n";
-echo implode(" ", permutation("hoge"));
+echo implode(" ", permutation("hoge-1"));
 ?>
