@@ -8,22 +8,23 @@ function f($num){
 		$numList .= $i;
 	}
 
-	preg_match_all('/1/', $numList, $matches);
+	$result = substr_count($numList, '1');
 
-	if(count($matches[0]>0)){
-		return count($matches[0]);
+	if($result>0){
+		return $result;
 	}
 }
 
 $counter = 0;
-$num = 1;
+$num = 130000;
 
 while(true){
 	if($num == f($num)){
 		$counter++;
+		echo $num . ':' . f($num) . "\n";
 	}
 
-//	echo $num . ':' . f($num) . "\n";
+	echo $num . ':' . f($num) . "\n";
 
 	if($counter == 2){
 		echo "result: $num";
